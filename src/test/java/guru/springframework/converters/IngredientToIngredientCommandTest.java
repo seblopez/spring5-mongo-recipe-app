@@ -26,26 +26,25 @@ public class IngredientToIngredientCommandTest {
     IngredientToIngredientCommand converter;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         converter = new IngredientToIngredientCommand(new UnitOfMeasureToUnitOfMeasureCommand());
     }
 
     @Test
-    public void testNullConvert() throws Exception {
+    public void testNullConvert() {
         assertNull(converter.convert(null));
     }
 
     @Test
-    public void testEmptyObject() throws Exception {
+    public void testEmptyObject() {
         assertNotNull(converter.convert(new Ingredient()));
     }
 
     @Test
-    public void testConvertNullUOM() throws Exception {
+    public void testConvertNullUOM() {
         //given
         Ingredient ingredient = new Ingredient();
         ingredient.setId(ID_VALUE);
-        ingredient.setRecipe(RECIPE);
         ingredient.setAmount(AMOUNT);
         ingredient.setDescription(DESCRIPTION);
         ingredient.setUom(null);
@@ -59,11 +58,10 @@ public class IngredientToIngredientCommandTest {
     }
 
     @Test
-    public void testConvertWithUom() throws Exception {
+    public void testConvertWithUom() {
         //given
         Ingredient ingredient = new Ingredient();
         ingredient.setId(ID_VALUE);
-        ingredient.setRecipe(RECIPE);
         ingredient.setAmount(AMOUNT);
         ingredient.setDescription(DESCRIPTION);
 
