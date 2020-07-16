@@ -15,6 +15,7 @@ import java.util.UUID;
 @Builder
 public class Notes {
 
+    @Builder.Default
     private String id = UUID.randomUUID().toString();
     private Recipe recipe;
     private String recipeNotes;

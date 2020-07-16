@@ -18,7 +18,9 @@ import java.util.UUID;
 @Document
 public class Ingredient {
 
+    @Builder.Default
     private String id = UUID.randomUUID().toString();
+
     private String description;
     private BigDecimal amount;
 
