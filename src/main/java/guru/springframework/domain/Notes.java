@@ -1,7 +1,8 @@
 package guru.springframework.domain;
 
 import lombok.*;
-import org.springframework.data.annotation.Id;
+
+import java.util.UUID;
 
 
 /**
@@ -14,10 +15,7 @@ import org.springframework.data.annotation.Id;
 @Builder
 public class Notes {
 
-    @Id
-    private String id;
-
-
+    private String id = UUID.randomUUID().toString();
     private Recipe recipe;
     private String recipeNotes;
 
