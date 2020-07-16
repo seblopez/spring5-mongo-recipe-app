@@ -1,7 +1,7 @@
 package guru.springframework.domain;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import org.springframework.data.annotation.Id;
 
 
 /**
@@ -9,9 +9,15 @@ import lombok.Setter;
  */
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Notes {
 
+    @Id
     private String id;
+
+
     private Recipe recipe;
     private String recipeNotes;
 
